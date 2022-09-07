@@ -15,4 +15,10 @@ class CheckoutTest extends AnyFunSuite{
     assert(orangePrice === 25)
   }
 
+  test("that checkout can add prices of an apple and orange") {
+    val itemsToCheckout = List("Apple", "Orange")
+    val testTotalPrice = Checkout.run(itemsToCheckout)
+    assert(testTotalPrice == "£0.85")
+  }
+
 }
